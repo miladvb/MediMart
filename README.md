@@ -1,43 +1,56 @@
-# Drugstore Finder
+# 🚀 MediMart (Meds Finder)
 
-## Overview
+**Find your Meds faster.**  
+Meds Finder is a lightweight, smart web app that helps users locate medications across local pharmacies without relying on a centralized medication database.
 
-Drugstore Finder is a web application designed to help users locate medications in pharmacies efficiently. Instead of maintaining a database of available medications, the system stores only the location and management details of pharmacies.
+---
 
-### How It Works
+## What It Does
 
-- Users send a message with the required medication details.
-- The request is sent to all pharmacies.
-- Pharmacy staff can confirm availability if they have the requested medication.
-- The system then shares the pharmacy's location with the user.
-- This process helps patients find medications more easily across a city, county, or province.
+Instead of tracking real-time stock of medications, Meds Finder simplifies the process:
 
-## Technologies Used
+1. **User submits** a request with the medication name.
+2. **All pharmacies** in the network receive the request.
+3. **Pharmacy staff** confirm if they have it in stock.
+4. The user is provided with the **pharmacy's location and contact information**.
 
-- **Backend:** ASP.NET Web API
-- **Frontend:** React.js
-- **Database:** MSSQL Server
+✅ Efficient  
+✅ Decentralized  
+✅ Privacy-friendly
 
-## Installation & Setup
+---
+
+## 🛠 Tech Stack
+
+| Layer      | Technology             |
+|------------|------------------------|
+| Backend    | ASP.NET Web API        |
+| Frontend   | React.js               |
+| Database   | Microsoft SQL Server   |
+
+---
+
+## Setup Guide
 
 ### Prerequisites
 
-- Node.js & npm installed
-- .NET SDK installed
-- SQL Server installed & configured
+Make sure you have the following installed:
 
-### Clone the Repository
+- [Node.js](https://nodejs.org/)
+- [.NET SDK](https://dotnet.microsoft.com/en-us/download)
+- SQL Server
 
-```sh
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/Kasraco/DrugStore.git
 cd DrugStore
 ```
 
-### Configure Backend
+### 2. Backend Configuration
+Update connection settings in backend/Presentation/appsettings.json:
 
-1. Navigate to `backend/Presentation/appsettings.json` and update the following settings:
-
-```json
+```bash
 "ConnectionStrings": {
   "KRBConnectionString": "Data Source=.\\SQLEXPRESS;Initial Catalog=dbDrugStore;TrustServerCertificate=True; Integrated Security=true"
 },
@@ -51,40 +64,26 @@ cd DrugStore
 }
 ```
 
-2. Restore dependencies and build the backend:
+Then run:
 
-```sh
+```bash
 cd backend
- dotnet restore
- dotnet build
+dotnet restore
+dotnet build
 ```
 
-### Configure Frontend
+### 3. Frontend Configuration
 
-1. Install dependencies and build the frontend:
+Navigate to the frontend directory, install dependencies, and build the application:
 
-```sh
+```bash
 cd FrontEnd/reactivities-app
 npm install
 npm run build-all
 ```
+### 3. Start the Application
+To run both the backend and frontend together, use:
 
-### Run the Application
-
-To start both backend and frontend simultaneously, run the following command:
-
-```sh
+```bash
 npm run start-all
 ```
-
-## Contribution
-
-Feel free to fork this repository, create a branch, and submit a pull request with improvements.
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
-**Note:** Ensure your SMTP settings and database connection string are correctly configured before running the application.

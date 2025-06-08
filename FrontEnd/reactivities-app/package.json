@@ -1,0 +1,43 @@
+{
+  "name": "reactivities-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "build-all": "cd ../../ && dotnet build ./BackEnd/Domain/KRB.Domain.csproj && dotnet build ./BackEnd/Data/KRB.Data.csproj && dotnet build ./BackEnd/Application/KRB.Application.csproj && dotnet build ./BackEnd/IOC/KRB.IOC.csproj",
+    "start-backend": "cd ../../BackEnd/Presentation && dotnet watch run --project KRB.WebApi.csproj",
+    "start-frontend": "next dev --turbopack",
+    "start-all": "concurrently \"npm run start-backend\" \"npm run start-frontend\""
+  },
+  "dependencies": {
+    "@next/env": "^15.2.3",
+    "axios": "^1.8.4",
+    "concurrently": "^9.1.2",
+    "hamburger-react": "^2.5.2",
+    "next": "^15.2.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@eslint/js": "^9.21.0",
+    "@next/eslint-plugin-next": "^15.2.1",
+    "@tailwindcss/postcss": "^4.0.17",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.21.0",
+    "eslint-config-next": "15.2.1",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^16.0.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.4",
+    "typescript": "^5",
+    "typescript-eslint": "^8.26.0"
+  }
+}
